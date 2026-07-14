@@ -26,8 +26,7 @@
             position: relative;
             text-align: center;
             margin-top: 50px;
-            margin-bottom: 80px; 
-            padding-bottom: 60px;
+            margin-bottom: 10px; /* Zmenšená mezera pod papírky */
             height: 120px; 
         }
 
@@ -40,13 +39,13 @@
             height: 180px;
             border-bottom: 3px solid #7c6a5e;
             border-radius: 50%;
-            z-index: 1; /* Šňůra je vrstva 1 (vzadu) */
+            z-index: 1; 
             pointer-events: none;
         }
 
         .papers {
             position: relative;
-            z-index: 2; /* Papíry jsou vrstva 2 (vpředu) */
+            z-index: 2; 
             display: flex;
             justify-content: center;
             gap: 6px; 
@@ -78,98 +77,30 @@
         }
 
         /* Generované pozice a barvy pro dokonalou křivku */
-        .papers > :nth-child(1) {
-            background-color: #ffb7b2;
-            transform: translateY(3.3px) rotate(5.4deg);
-        }
-        .papers > :nth-child(2) {
-            background-color: #e2f0cb;
-            transform: translateY(9.7px) rotate(4.9deg);
-        }
-        .papers > :nth-child(3) {
-            background-color: #ffdac1;
-            transform: translateY(15.5px) rotate(6.2deg);
-        }
-        .papers > :nth-child(4) {
-            background-color: #b5ead7;
-            transform: translateY(20.5px) rotate(3.1deg);
-        }
-        .papers > :nth-child(5) {
-            background-color: #ffeed0;
-            transform: translateY(25.1px) rotate(1.2deg);
-        }
-        .papers > :nth-child(6) {
-            transform: translateY(29.0px) rotate(3.0deg);
-        }
-        .papers > :nth-child(7) {
-            background-color: #ffb7b2;
-            transform: translateY(32.5px) rotate(5.4deg);
-        }
-        .papers > :nth-child(8) {
-            background-color: #e2f0cb;
-            transform: translateY(35.3px) rotate(-0.1deg);
-        }
-        .papers > :nth-child(9) {
-            background-color: #ffdac1;
-            transform: translateY(37.5px) rotate(1.4deg);
-        }
-        .papers > :nth-child(10) {
-            background-color: #b5ead7;
-            transform: translateY(39.1px) rotate(0.4deg);
-        }
-        .papers > :nth-child(11) {
-            background-color: #ffeed0;
-            transform: translateY(40.1px) rotate(1.9deg);
-        }
-        .papers > :nth-child(12) {
-            background-color: #ffb7b2;
-            transform: translateY(40.4px) rotate(-1.5deg);
-        }
-        .papers > :nth-child(13) {
-            background-color: #e2f0cb;
-            transform: translateY(40.1px) rotate(-0.1deg);
-        }
-        .papers > :nth-child(14) {
-            transform: translateY(39.1px) rotate(-1.5deg);
-        }
-        .papers > :nth-child(15) {
-            background-color: #ffdac1;
-            transform: translateY(37.5px) rotate(-3.3deg);
-        }
-        .papers > :nth-child(16) {
-            background-color: #b5ead7;
-            transform: translateY(35.3px) rotate(-2.8deg);
-        }
-        .papers > :nth-child(17) {
-            background-color: #ffeed0;
-            transform: translateY(32.5px) rotate(-4.2deg);
-        }
-        .papers > :nth-child(18) {
-            background-color: #ffb7b2;
-            transform: translateY(29.0px) rotate(-6.0deg);
-        }
-        .papers > :nth-child(19) {
-            background-color: #e2f0cb;
-            transform: translateY(25.1px) rotate(-4.4deg);
-        }
-        .papers > :nth-child(20) {
-            background-color: #ffdac1;
-            transform: translateY(20.5px) rotate(-4.7deg);
-        }
-        .papers > :nth-child(21) {
-            background-color: #b5ead7;
-            transform: translateY(15.5px) rotate(-3.2deg);
-        }
-        .papers > :nth-child(22) {
-            background-color: #ffeed0;
-            transform: translateY(9.7px) rotate(-8.0deg);
-        }
-        .papers > :nth-child(23) {
-            background-color: #ffb7b2;
-            transform: translateY(3.3px) rotate(-9.5deg);
-        }
+        .papers > :nth-child(1) { background-color: #ffb7b2; transform: translateY(3.3px) rotate(5.4deg); }
+        .papers > :nth-child(2) { background-color: #e2f0cb; transform: translateY(9.7px) rotate(4.9deg); }
+        .papers > :nth-child(3) { background-color: #ffdac1; transform: translateY(15.5px) rotate(6.2deg); }
+        .papers > :nth-child(4) { background-color: #b5ead7; transform: translateY(20.5px) rotate(3.1deg); }
+        .papers > :nth-child(5) { background-color: #ffeed0; transform: translateY(25.1px) rotate(1.2deg); }
+        .papers > :nth-child(6) { transform: translateY(29.0px) rotate(3.0deg); }
+        .papers > :nth-child(7) { background-color: #ffb7b2; transform: translateY(32.5px) rotate(5.4deg); }
+        .papers > :nth-child(8) { background-color: #e2f0cb; transform: translateY(35.3px) rotate(-0.1deg); }
+        .papers > :nth-child(9) { background-color: #ffdac1; transform: translateY(37.5px) rotate(1.4deg); }
+        .papers > :nth-child(10) { background-color: #b5ead7; transform: translateY(39.1px) rotate(0.4deg); }
+        .papers > :nth-child(11) { background-color: #ffeed0; transform: translateY(40.1px) rotate(1.9deg); }
+        .papers > :nth-child(12) { background-color: #ffb7b2; transform: translateY(40.4px) rotate(-1.5deg); }
+        .papers > :nth-child(13) { background-color: #e2f0cb; transform: translateY(40.1px) rotate(-0.1deg); }
+        .papers > :nth-child(14) { transform: translateY(39.1px) rotate(-1.5deg); }
+        .papers > :nth-child(15) { background-color: #ffdac1; transform: translateY(37.5px) rotate(-3.3deg); }
+        .papers > :nth-child(16) { background-color: #b5ead7; transform: translateY(35.3px) rotate(-2.8deg); }
+        .papers > :nth-child(17) { background-color: #ffeed0; transform: translateY(32.5px) rotate(-4.2deg); }
+        .papers > :nth-child(18) { background-color: #ffb7b2; transform: translateY(29.0px) rotate(-6.0deg); }
+        .papers > :nth-child(19) { background-color: #e2f0cb; transform: translateY(25.1px) rotate(-4.4deg); }
+        .papers > :nth-child(20) { background-color: #ffdac1; transform: translateY(20.5px) rotate(-4.7deg); }
+        .papers > :nth-child(21) { background-color: #b5ead7; transform: translateY(15.5px) rotate(-3.2deg); }
+        .papers > :nth-child(22) { background-color: #ffeed0; transform: translateY(9.7px) rotate(-8.0deg); }
+        .papers > :nth-child(23) { background-color: #ffb7b2; transform: translateY(3.3px) rotate(-9.5deg); }
 
-        /* Jemný hover efekt */
         .paper:hover {
             z-index: 10;
             box-shadow: 4px 8px 18px rgba(0,0,0,0.2);
@@ -191,6 +122,15 @@
             color: #2c3e50;
             font-size: 1.3rem;
             font-weight: 700;
+        }
+
+        /* Speciální formátování pro úplně první nadpis (Co: ...) */
+        .info-text h3:first-of-type {
+            font-size: 2.6rem;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Hezčí, elegantní písmo */
+            color: #1a252f;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
         .info-text p {
@@ -271,21 +211,11 @@
             color: #334155;
         }
 
-        /* Barevné rozlišení účasti */
-        .person.yes { 
-            border-left-color: #2ecc71; 
-            background-color: #fafdfa;
-        }
-        .person.no { 
-            border-left-color: #e74c3c; 
-            background-color: #fffafa;
-        }
+        .person.yes { border-left-color: #2ecc71; background-color: #fafdfa; }
+        .person.no { border-left-color: #e74c3c; background-color: #fffafa; }
+        .status-icon { font-size: 1.15rem; }
 
-        .status-icon {
-            font-size: 1.15rem;
-        }
-
-        /* --- Responzivita (pro mobilní zařízení) --- */
+        /* --- Responzivita --- */
         @media (max-width: 1000px) {
             .name-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -296,11 +226,9 @@
             .three-photos img { height: 300px; }
             .hero-img { height: 280px; }
             
-            /* Na mobilu zmenšíme papírky a vypneme prohnutí */
             .garland-container {
                 height: auto;
-                margin-bottom: 40px;
-                padding-bottom: 0;
+                margin-bottom: 20px;
             }
             .string { display: none; }
             .papers {
@@ -316,6 +244,10 @@
                 margin-bottom: 5px;
             }
             .spacer { display: none; }
+            
+            .info-text h3:first-of-type {
+                font-size: 2rem; /* Trochu zmenšeno pro mobily */
+            }
         }
 
         @media (max-width: 480px) {
@@ -331,33 +263,11 @@
     <header class="garland-container">
         <div class="string"></div>
         <div class="papers">
-            <div class="paper">V</div>
-            <div class="paper">Í</div>
-            <div class="paper">T</div>
-            <div class="paper">E</div>
-            <div class="paper">J</div>
-            
+            <div class="paper">V</div><div class="paper">Í</div><div class="paper">T</div><div class="paper">E</div><div class="paper">J</div>
             <div class="spacer"></div>
-            
-            <div class="paper">R</div>
-            <div class="paper">O</div>
-            <div class="paper">Č</div>
-            <div class="paper">N</div>
-            <div class="paper">Í</div>
-            <div class="paper">K</div>
-            <div class="paper">U</div>
-            
+            <div class="paper">R</div><div class="paper">O</div><div class="paper">Č</div><div class="paper">N</div><div class="paper">Í</div><div class="paper">K</div><div class="paper">U</div>
             <div class="spacer"></div>
-            
-            <div class="paper">2</div>
-            <div class="paper">0</div>
-            <div class="paper">0</div>
-            <div class="paper">7</div>
-            <div class="paper">-</div>
-            <div class="paper">2</div>
-            <div class="paper">0</div>
-            <div class="paper">1</div>
-            <div class="paper">1</div>
+            <div class="paper">2</div><div class="paper">0</div><div class="paper">0</div><div class="paper">7</div><div class="paper">-</div><div class="paper">2</div><div class="paper">0</div><div class="paper">1</div><div class="paper">1</div>
         </div>
     </header>
 
@@ -378,7 +288,6 @@
 
     <section class="attendance-section">
         <h2>KDO SE ZÚČASTNÍ?</h2>
-        
         <img class="hero-img" src="https://picsum.photos/1000/400?random=4" alt="Společná fotka ročníku">
 
         <div class="name-grid">
