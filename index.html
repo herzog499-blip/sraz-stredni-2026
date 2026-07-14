@@ -27,18 +27,17 @@
             text-align: center;
             margin-top: 40px;
             margin-bottom: 50px;
-            overflow: hidden;
             padding-bottom: 20px;
         }
 
-        /* Šňůrka */
+        /* Šňůrka prohnutá dolů (gravitace) */
         .string {
             position: absolute;
-            top: 20px;
+            top: -40px; 
             left: -10%;
             width: 120%;
             height: 100px;
-            border-top: 3px solid #8c7b75;
+            border-bottom: 3px solid #8c7b75; /* Změna na spodní okraj */
             border-radius: 50%;
             z-index: 1;
         }
@@ -48,39 +47,50 @@
             z-index: 2;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 8px; /* Menší mezera mezi písmeny */
             flex-wrap: wrap;
         }
 
+        /* Vzhled jedné A4 pro písmenko */
         .paper {
             background-color: #fff;
-            padding: 20px 30px;
-            font-size: 1.8rem;
+            width: 35px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
             font-weight: 900;
             text-transform: uppercase;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
             position: relative;
-            border-radius: 3px;
+            border-radius: 2px;
         }
 
         /* Kolíčky/díry na papíru */
         .paper::before {
             content: '';
             position: absolute;
-            top: 5px;
+            top: 4px;
             left: 50%;
             transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: #333;
             border-radius: 50%;
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* Různé barvy a natočení papírů */
-        .paper:nth-child(1) { background-color: #ffb7b2; transform: rotate(-3deg) translateY(10px); }
-        .paper:nth-child(2) { background-color: #e2f0cb; transform: rotate(2deg) translateY(20px); }
-        .paper:nth-child(3) { background-color: #ffdac1; transform: rotate(-1deg) translateY(15px); }
+        /* Mezera mezi slovy */
+        .spacer {
+            width: 20px;
+        }
+
+        /* Automatické střídání 4 barev a natočení pro všechna písmena */
+        .paper:nth-child(4n+1) { background-color: #ffb7b2; transform: rotate(-4deg) translateY(2px); }
+        .paper:nth-child(4n+2) { background-color: #e2f0cb; transform: rotate(3deg) translateY(-2px); }
+        .paper:nth-child(4n+3) { background-color: #ffdac1; transform: rotate(-2deg) translateY(4px); }
+        .paper:nth-child(4n+4) { background-color: #b5ead7; transform: rotate(5deg) translateY(-1px); }
 
         /* --- Informační text --- */
         .info-text {
@@ -160,7 +170,6 @@
             font-weight: 500;
         }
 
-        /* Zvýraznění hrany podle účasti */
         .person.yes { border-left-color: #27ae60; }
         .person.no { border-left-color: #e74c3c; }
 
@@ -173,14 +182,13 @@
             .name-grid { grid-template-columns: repeat(2, 1fr); }
             .three-photos { grid-template-columns: 1fr; }
             .three-photos img { height: auto; }
-            .paper { font-size: 1.2rem; padding: 15px 20px; }
             .hero-img { height: 250px; }
+            .paper { width: 25px; height: 35px; font-size: 1.2rem; } /* Zmenšení papírků na mobilu */
+            .string { top: -25px; }
         }
         @media (max-width: 450px) {
             .name-grid { grid-template-columns: 1fr; }
-            .papers { flex-direction: column; gap: 10px; align-items: center; }
-            .string { display: none; /* Na malém mobilu šňůrku schováme */ }
-            .paper { transform: none !important; width: 80%; }
+            .string { display: none; } /* Na malém mobilu šňůrku schováme, je tam málo místa na oblouk */
         }
     </style>
 </head>
@@ -188,13 +196,40 @@
 
 <div class="container">
 
-    <!-- HLAVNÍ NADPIS (Girlanda) -->
+    <!-- HLAVNÍ NADPIS (Girlanda po písmenech) -->
     <header class="garland-container">
         <div class="string"></div>
         <div class="papers">
-            <div class="paper">VÍTEJ</div>
-            <div class="paper">ROČNÍKU</div>
-            <div class="paper">2007-2011</div>
+            <!-- VÍTEJ -->
+            <div class="paper">V</div>
+            <div class="paper">Í</div>
+            <div class="paper">T</div>
+            <div class="paper">E</div>
+            <div class="paper">J</div>
+            
+            <div class="spacer"></div>
+            
+            <!-- ROČNÍKU -->
+            <div class="paper">R</div>
+            <div class="paper">O</div>
+            <div class="paper">Č</div>
+            <div class="paper">N</div>
+            <div class="paper">Í</div>
+            <div class="paper">K</div>
+            <div class="paper">U</div>
+            
+            <div class="spacer"></div>
+            
+            <!-- 2007-2011 -->
+            <div class="paper">2</div>
+            <div class="paper">0</div>
+            <div class="paper">0</div>
+            <div class="paper">7</div>
+            <div class="paper">-</div>
+            <div class="paper">2</div>
+            <div class="paper">0</div>
+            <div class="paper">1</div>
+            <div class="paper">1</div>
         </div>
     </header>
 
@@ -208,7 +243,7 @@
         </p>
     </section>
 
-    <!-- 3 FOTKY VEDLE SEBE (zde změň src="..." za url tvých fotek) -->
+    <!-- 3 FOTKY VEDLE SEBE -->
     <section class="three-photos">
         <img src="https://picsum.photos/400/300?random=1" alt="Vzpomínka 1">
         <img src="https://picsum.photos/400/300?random=2" alt="Vzpomínka 2">
@@ -219,15 +254,11 @@
     <section class="attendance-section">
         <h2>KDO SE ZÚČASTNÍ?</h2>
         
-        <!-- VELKÁ FOTKA NA ŠÍŘKU -->
         <img class="hero-img" src="https://picsum.photos/1000/400?random=4" alt="Společná fotka ročníku">
 
-        <!-- SEZNAM 32 JMÉN -->
         <div class="name-grid">
-            <!-- Příklad potvrzené účasti (class="person yes", znak ✅) -->
             <div class="person yes"><span>Jan Novák</span> <span>✅</span></div>
             <div class="person yes"><span>Petr Dvořák</span> <span>✅</span></div>
-            <!-- Příklad zamítnuté účasti (class="person no", znak 🔴) -->
             <div class="person no"><span>Jana Svobodová</span> <span>🔴</span></div>
             <div class="person yes"><span>Eva Černá</span> <span>✅</span></div>
             
