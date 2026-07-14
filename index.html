@@ -31,7 +31,7 @@
             height: 120px; 
         }
 
-        /* Šňůrka prohnutá dolů - prochází přesně skrz dírky papírů */
+        /* Šňůrka prohnutá dolů - schovaná ZA papíry */
         .string {
             position: absolute;
             top: -105px; 
@@ -40,13 +40,13 @@
             height: 180px;
             border-bottom: 3px solid #7c6a5e;
             border-radius: 50%;
-            z-index: 3; /* Přesně přes dírky/kolíčky */
+            z-index: 1; /* Šňůra je vrstva 1 (vzadu) */
             pointer-events: none;
         }
 
         .papers {
             position: relative;
-            z-index: 2;
+            z-index: 2; /* Papíry jsou vrstva 2 (vpředu) */
             display: flex;
             justify-content: center;
             gap: 6px; 
@@ -70,21 +70,6 @@
             transition: transform 0.2s ease;
         }
 
-        /* Dírka na papíru, kterou prochází šňůra */
-        .paper::before {
-            content: '';
-            position: absolute;
-            top: 11px; /* Umístění přesně tam, kde prochází šňůra */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 7px;
-            height: 7px;
-            background: #2c2c2c; /* Dírka (tmavé pozadí) */
-            border-radius: 50%;
-            z-index: 4;
-            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.8);
-        }
-
         /* Mezera mezi slovy */
         .spacer {
             width: 25px;
@@ -93,7 +78,6 @@
         }
 
         /* Generované pozice a barvy pro dokonalou křivku */
-        
         .papers > :nth-child(1) {
             background-color: #ffb7b2;
             transform: translateY(3.3px) rotate(5.4deg);
@@ -330,11 +314,6 @@
                 font-size: 1.3rem;
                 transform: none !important; 
                 margin-bottom: 5px;
-            }
-            .paper::before {
-                top: 6px;
-                width: 5px;
-                height: 5px;
             }
             .spacer { display: none; }
         }
