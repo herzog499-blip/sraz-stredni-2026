@@ -74,21 +74,6 @@
             transition: transform 0.2s ease;
         }
 
-        /* Dírka na papíru, kterou prochází šňůra */
-        .paper::before {
-            content: '';
-            position: absolute;
-            top: 11px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 7px;
-            height: 7px;
-            background: #2c2c2c;
-            border-radius: 50%;
-            z-index: 4;
-            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.8);
-        }
-
         /* Mezera mezi slovy */
         .spacer {
             width: 25px;
@@ -96,7 +81,7 @@
             display: inline-block;
         }
 
-        /* Generované pozice a barvy pro dokonalou křivku na PC */
+        /* Generované pozice a barvy pro dokonalou křivku */
         .papers > :nth-child(1) { background-color: #ffb7b2; transform: translateY(3.3px) rotate(5.4deg); }
         .papers > :nth-child(2) { background-color: #e2f0cb; transform: translateY(9.7px) rotate(4.9deg); }
         .papers > :nth-child(3) { background-color: #ffdac1; transform: translateY(15.5px) rotate(6.2deg); }
@@ -176,7 +161,7 @@
             display: flex;
             gap: 15px;
             width: max-content;
-            animation: scroll 30s linear infinite;
+            animation: scroll 60s linear infinite;
         }
 
         .carousel-track:hover {
@@ -285,7 +270,8 @@
                 z-index: 1;
                 pointer-events: none;
             }
-            /* Přesné napozicování pod dírky papírků */
+            
+            /* Přesné napozicování pod papírky na mobilu */
             .ms-1 { top: -29px; }
             .ms-2 { top: 51px; }
             .ms-3 { top: 131px; }
@@ -302,6 +288,7 @@
                 height: 45px;
                 font-size: 1.4rem;
                 margin-bottom: 0;
+                transform: none !important; /* Vypneme původní rotaci z velkého oblouku */
             }
             
             /* Přirozené rozhození papírků (vlnění) na mobilu */
@@ -309,12 +296,6 @@
             .papers > :nth-child(4n+2) { transform: rotate(-2deg) !important; }
             .papers > :nth-child(4n+3) { transform: rotate(1deg) !important; }
             .papers > :nth-child(4n+4) { transform: rotate(-3deg) !important; }
-
-            .paper::before {
-                top: 6px;
-                width: 5px;
-                height: 5px;
-            }
             
             /* Z mezer uděláme tvrdé zalomení řádku */
             .spacer {
@@ -380,19 +361,19 @@
             <img src="420.jpg" alt="Vzpomínka 11">
             <img src="426.jpg" alt="Vzpomínka 12">
             <img src="cajka.jpg" alt="Vzpomínka 13">
-            <img src="DSC04702.JPG" alt="Vzpomínka 14">
-            <img src="DSC04731.JPG" alt="Vzpomínka 15">
-            <img src="DSC04738.JPG" alt="Vzpomínka 16">
+            <img src="DSC04702.jpg" alt="Vzpomínka 14">
+            <img src="DSC04731.jpg" alt="Vzpomínka 15">
+            <img src="DSC04738.jpg" alt="Vzpomínka 16">
             <img src="holky-kotlarska.jpg" alt="Vzpomínka 17">
-            <img src="IMG_9258.JPG" alt="Vzpomínka 18">
-            <img src="P1000304.JPG" alt="Vzpomínka 19">
-            <img src="P1000317.JPG" alt="Vzpomínka 20">
-            <img src="P1010968.JPG" alt="Vzpomínka 21">
-            <img src="P1010983.JPG" alt="Vzpomínka 22">
-            <img src="P1010999.JPG" alt="Vzpomínka 23">
-            <img src="P1020020.JPG" alt="Vzpomínka 24">
-            <img src="P1020065.JPG" alt="Vzpomínka 25">
-            <img src="P1020069.JPG" alt="Vzpomínka 26">
+            <img src="IMG_9258.jpg" alt="Vzpomínka 18">
+            <img src="P1000304.jpg" alt="Vzpomínka 19">
+            <img src="P1000317.jpg" alt="Vzpomínka 20">
+            <img src="P1010968.jpg" alt="Vzpomínka 21">
+            <img src="P1010983.jpg" alt="Vzpomínka 22">
+            <img src="P1010999.jpg" alt="Vzpomínka 23">
+            <img src="P1020020.jpg" alt="Vzpomínka 24">
+            <img src="P1020065.jpg" alt="Vzpomínka 25">
+            <img src="P1020069.jpg" alt="Vzpomínka 26">
 
             <!-- 2. SADA FOTEK -->
             <img src="161.jpg" alt="Vzpomínka 1">
@@ -408,19 +389,19 @@
             <img src="420.jpg" alt="Vzpomínka 11">
             <img src="426.jpg" alt="Vzpomínka 12">
             <img src="cajka.jpg" alt="Vzpomínka 13">
-            <img src="DSC04702.JPG" alt="Vzpomínka 14">
-            <img src="DSC04731.JPG" alt="Vzpomínka 15">
-            <img src="DSC04738.JPG" alt="Vzpomínka 16">
+            <img src="DSC04702.jpg" alt="Vzpomínka 14">
+            <img src="DSC04731.jpg" alt="Vzpomínka 15">
+            <img src="DSC04738.jpg" alt="Vzpomínka 16">
             <img src="holky-kotlarska.jpg" alt="Vzpomínka 17">
-            <img src="IMG_9258.JPG" alt="Vzpomínka 18">
-            <img src="P1000304.JPG" alt="Vzpomínka 19">
-            <img src="P1000317.JPG" alt="Vzpomínka 20">
-            <img src="P1010968.JPG" alt="Vzpomínka 21">
-            <img src="P1010983.JPG" alt="Vzpomínka 22">
-            <img src="P1010999.JPG" alt="Vzpomínka 23">
-            <img src="P1020020.JPG" alt="Vzpomínka 24">
-            <img src="P1020065.JPG" alt="Vzpomínka 25">
-            <img src="P1020069.JPG" alt="Vzpomínka 26">
+            <img src="IMG_9258.jpg" alt="Vzpomínka 18">
+            <img src="P1000304.jpg" alt="Vzpomínka 19">
+            <img src="P1000317.jpg" alt="Vzpomínka 20">
+            <img src="P1010968.jpg" alt="Vzpomínka 21">
+            <img src="P1010983.jpg" alt="Vzpomínka 22">
+            <img src="P1010999.jpg" alt="Vzpomínka 23">
+            <img src="P1020020.jpg" alt="Vzpomínka 24">
+            <img src="P1020065.jpg" alt="Vzpomínka 25">
+            <img src="P1020069.jpg" alt="Vzpomínka 26">
         </div>
     </section>
 
