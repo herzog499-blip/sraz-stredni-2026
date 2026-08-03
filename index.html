@@ -8,7 +8,7 @@
         /* Základní nastavení stránky */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdfbf7;
+            background-color: #faf8f5;
             color: #333;
             margin: 0;
             padding: 0;
@@ -16,7 +16,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -25,80 +25,121 @@
         .garland-container {
             position: relative;
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 50px;
-            overflow: hidden;
-            padding-bottom: 20px;
+            margin-top: 50px;
+            margin-bottom: 10px; 
+            height: 120px; 
         }
 
+        /* Šňůrka prohnutá dolů - schovaná ZA papíry */
         .string {
             position: absolute;
-            top: 20px;
-            left: -10%;
-            width: 120%;
-            height: 100px;
-            border-top: 3px solid #8c7b75;
+            top: -105px; 
+            left: -5%;
+            width: 110%;
+            height: 180px;
+            border-bottom: 3px solid #7c6a5e;
             border-radius: 50%;
-            z-index: 1;
+            z-index: 1; 
+            pointer-events: none;
         }
 
         .papers {
             position: relative;
-            z-index: 2;
+            z-index: 2; 
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 6px; 
         }
 
+        /* Vzhled jedné A4 pro písmenko */
         .paper {
-            background-color: #fff;
-            padding: 20px 30px;
+            width: 38px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.8rem;
-            font-weight: 900;
+            font-weight: 950;
             text-transform: uppercase;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.12);
             position: relative;
-            border-radius: 3px;
+            border-radius: 2px;
+            color: #2c2c2c;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
         }
 
-        .paper::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
-            background: #333;
-            border-radius: 50%;
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+        /* Mezera mezi slovy */
+        .spacer {
+            width: 25px;
+            height: 54px;
+            display: inline-block;
         }
 
-        .paper:nth-child(1) { background-color: #ffb7b2; transform: rotate(-3deg) translateY(10px); }
-        .paper:nth-child(2) { background-color: #e2f0cb; transform: rotate(2deg) translateY(20px); }
-        .paper:nth-child(3) { background-color: #ffdac1; transform: rotate(-1deg) translateY(15px); }
+        /* Generované pozice a barvy pro dokonalou křivku */
+        .papers > :nth-child(1) { background-color: #ffb7b2; transform: translateY(3.3px) rotate(5.4deg); }
+        .papers > :nth-child(2) { background-color: #e2f0cb; transform: translateY(9.7px) rotate(4.9deg); }
+        .papers > :nth-child(3) { background-color: #ffdac1; transform: translateY(15.5px) rotate(6.2deg); }
+        .papers > :nth-child(4) { background-color: #b5ead7; transform: translateY(20.5px) rotate(3.1deg); }
+        .papers > :nth-child(5) { background-color: #ffeed0; transform: translateY(25.1px) rotate(1.2deg); }
+        .papers > :nth-child(6) { transform: translateY(29.0px) rotate(3.0deg); }
+        .papers > :nth-child(7) { background-color: #ffb7b2; transform: translateY(32.5px) rotate(5.4deg); }
+        .papers > :nth-child(8) { background-color: #e2f0cb; transform: translateY(35.3px) rotate(-0.1deg); }
+        .papers > :nth-child(9) { background-color: #ffdac1; transform: translateY(37.5px) rotate(1.4deg); }
+        .papers > :nth-child(10) { background-color: #b5ead7; transform: translateY(39.1px) rotate(0.4deg); }
+        .papers > :nth-child(11) { background-color: #ffeed0; transform: translateY(40.1px) rotate(1.9deg); }
+        .papers > :nth-child(12) { background-color: #ffb7b2; transform: translateY(40.4px) rotate(-1.5deg); }
+        .papers > :nth-child(13) { background-color: #e2f0cb; transform: translateY(40.1px) rotate(-0.1deg); }
+        .papers > :nth-child(14) { transform: translateY(39.1px) rotate(-1.5deg); }
+        .papers > :nth-child(15) { background-color: #ffdac1; transform: translateY(37.5px) rotate(-3.3deg); }
+        .papers > :nth-child(16) { background-color: #b5ead7; transform: translateY(35.3px) rotate(-2.8deg); }
+        .papers > :nth-child(17) { background-color: #ffeed0; transform: translateY(32.5px) rotate(-4.2deg); }
+        .papers > :nth-child(18) { background-color: #ffb7b2; transform: translateY(29.0px) rotate(-6.0deg); }
+        .papers > :nth-child(19) { background-color: #e2f0cb; transform: translateY(25.1px) rotate(-4.4deg); }
+        .papers > :nth-child(20) { background-color: #ffdac1; transform: translateY(20.5px) rotate(-4.7deg); }
+        .papers > :nth-child(21) { background-color: #b5ead7; transform: translateY(15.5px) rotate(-3.2deg); }
+        .papers > :nth-child(22) { background-color: #ffeed0; transform: translateY(9.7px) rotate(-8.0deg); }
+        .papers > :nth-child(23) { background-color: #ffb7b2; transform: translateY(3.3px) rotate(-9.5deg); }
+
+        .paper:hover {
+            z-index: 10;
+            box-shadow: 4px 8px 18px rgba(0,0,0,0.2);
+        }
 
         /* --- Informační text --- */
         .info-text {
             text-align: center;
             background: #fff;
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 50px;
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .info-text h3 {
-            margin: 5px 0;
-            color: #444;
+            margin: 8px 0;
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Speciální formátování pro úplně první nadpis (Co: ...) */
+        .info-text h3:first-of-type {
+            font-size: 2.6rem;
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            color: #1a252f;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
         .info-text p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 20px auto 0;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 25px auto 0;
             font-style: italic;
+            color: #555;
+            line-height: 1.7;
         }
 
         /* --- Rotující fotogalerie s efektem do ztracena --- */
@@ -107,7 +148,6 @@
             overflow: hidden;
             margin-bottom: 60px;
             padding: 10px 0;
-            /* Tento kód zajistí, že kraje mizí do ztracena */
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         }
@@ -116,11 +156,9 @@
             display: flex;
             gap: 15px;
             width: max-content;
-            /* Animace: 30 sekund trvá jeden cyklus. Změň čas pro zrychlení/zpomalení */
             animation: scroll 30s linear infinite;
         }
 
-        /* Zastavení posunu, když na fotky někdo najede myší */
         .carousel-track:hover {
             animation-play-state: paused;
         }
@@ -132,6 +170,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            border: 4px solid #fff;
         }
 
         .carousel-track img:hover {
@@ -140,69 +179,98 @@
 
         @keyframes scroll {
             0% { transform: translateX(0); }
-            /* Posuneme přesně o polovinu šířky kontejneru mínus mezera */
             100% { transform: translateX(calc(-50% - 7.5px)); }
         }
 
         /* --- Účastníci --- */
         .attendance-section {
             text-align: center;
+            margin-top: 20px;
         }
 
         .attendance-section h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            font-size: 2.6rem;
+            color: #1a252f;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .hero-img {
             width: 100%;
-            height: 400px;
+            height: 420px;
             object-fit: cover;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            border: 6px solid #fff;
         }
 
         /* Grid jmen */
         .name-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 16px;
             text-align: left;
+            margin-bottom: 50px;
         }
 
         .person {
             background: #fff;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-left: 4px solid #eee;
-            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+            border-left: 5px solid #e2e8f0;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #334155;
         }
 
-        .person.yes { border-left-color: #27ae60; }
-        .person.no { border-left-color: #e74c3c; }
+        .person.yes { border-left-color: #2ecc71; background-color: #fafdfa; }
+        .person.no { border-left-color: #e74c3c; background-color: #fffafa; }
         .person.maybe { border-left-color: #f39c12; }
+        .status-icon { font-size: 1.15rem; }
 
         /* --- Responzivita --- */
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .name-grid { grid-template-columns: repeat(3, 1fr); }
         }
-        @media (max-width: 700px) {
+
+        @media (max-width: 768px) {
             .name-grid { grid-template-columns: repeat(2, 1fr); }
-            .paper { font-size: 1.2rem; padding: 15px 20px; }
-            .hero-img { height: 250px; }
+            .hero-img { height: 280px; }
             .carousel-track img { width: 250px; height: 180px; }
-        }
-        @media (max-width: 450px) {
-            .name-grid { grid-template-columns: 1fr; }
-            .papers { flex-direction: column; gap: 10px; align-items: center; }
+            
+            .garland-container {
+                height: auto;
+                margin-bottom: 20px;
+            }
             .string { display: none; }
-            .paper { transform: none !important; width: 80%; }
+            .papers {
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
+            }
+            .paper {
+                width: 30px;
+                height: 42px;
+                font-size: 1.3rem;
+                transform: none !important; 
+                margin-bottom: 5px;
+            }
+            .spacer { display: none; }
+            
+            .info-text h3:first-of-type {
+                font-size: 2rem; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name-grid { grid-template-columns: 1fr; }
+            .attendance-section h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -214,15 +282,17 @@
     <header class="garland-container">
         <div class="string"></div>
         <div class="papers">
-            <div class="paper">VÍTEJ</div>
-            <div class="paper">ROČNÍKU</div>
-            <div class="paper">2007-2011</div>
+            <div class="paper">V</div><div class="paper">Í</div><div class="paper">T</div><div class="paper">E</div><div class="paper">J</div>
+            <div class="spacer"></div>
+            <div class="paper">R</div><div class="paper">O</div><div class="paper">Č</div><div class="paper">N</div><div class="paper">Í</div><div class="paper">K</div><div class="paper">U</div>
+            <div class="spacer"></div>
+            <div class="paper">2</div><div class="paper">0</div><div class="paper">0</div><div class="paper">7</div><div class="paper">-</div><div class="paper">2</div><div class="paper">0</div><div class="paper">1</div><div class="paper">1</div>
         </div>
     </header>
 
     <!-- ZÁKLADNÍ INFO -->
     <section class="info-text">
-        <h3>4.LA PO 15 LETECH</h3>
+        <h3>Co: 4.LA PO 15 LETECH</h3>
         <h3>Kdy: 17. 10. 2026</h3>
         <h3>Kde: To be delivered..</h3>
         <p>
@@ -230,11 +300,10 @@
         </p>
     </section>
 
-    <!-- ROTUJÍCÍ FOTKY (Vycházejí a mizí do ztracena) -->
+    <!-- ROTUJÍCÍ FOTKY -->
     <section class="photo-carousel">
         <div class="carousel-track">
             <!-- 1. SADA FOTEK -->
-<!-- 1. SADA FOTEK -->
             <img src="161.jpg" alt="Vzpomínka 1">
             <img src="255.jpg" alt="Vzpomínka 2">
             <img src="311.jpg" alt="Vzpomínka 3">
@@ -262,7 +331,7 @@
             <img src="P1020065.JPG" alt="Vzpomínka 25">
             <img src="P1020069.JPG" alt="Vzpomínka 26">
 
-            <!-- 2. SADA FOTEK (úplná kopie toho samého, aby se to plynule točilo) -->
+            <!-- 2. SADA FOTEK -->
             <img src="161.jpg" alt="Vzpomínka 1">
             <img src="255.jpg" alt="Vzpomínka 2">
             <img src="311.jpg" alt="Vzpomínka 3">
@@ -298,50 +367,46 @@
         
         <img class="hero-img" src="https://picsum.photos/1000/400?random=7" alt="Společná fotka ročníku">
 
-        <!-- SEZNAM 32 JMÉN -->
         <div class="name-grid">
-            <!-- Příklad potvrzené účasti (class="person yes", znak ✅) -->
-            <div class="person maybe><span>Bára Bečková</span> <span>❓</span></div>
-            <!-- Příklad stavu NEVÍM (class="person maybe", znak ❓) -->
-            <div class="person maybe"><span>Pavla Beránková</span> <span>❓</span></div>
-            <!-- Příklad zamítnuté účasti (class="person no", znak 🔴) -->
-            <div class="person maybe"><span>Lukáš Blažek</span> <span>❓</span></div>
-            <div class="person maybe"><span>Marie Bulisová</span> <span>❓</span></div>
+            <div class="person maybe"><span>Bára Bečková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Pavla Beránková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Lukáš Blažek</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Marie Bulisová</span> <span class="status-icon">❓</span></div>
             
-            <div class="person maybe"><span>Simča Grmelová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Peťa Hájková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Denča Helmová</span> <span>❓</span></div>
-            <div class="person yes"><span>Ríša Herzog</span> <span>✅</span></div>
+            <div class="person maybe"><span>Simča Grmelová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Peťa Hájková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Denča Helmová</span> <span class="status-icon">❓</span></div>
+            <div class="person yes"><span>Ríša Herzog</span> <span class="status-icon">✅</span></div>
 
-            <div class="person maybe"><span>Terka Holtmanová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Leňa Hrnčířová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Romča Chalupová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Kačka Jakubcová</span> <span>❓</span></div>
+            <div class="person maybe"><span>Terka Holtmanová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Leňa Hrnčířová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Romča Chalupová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Kačka Jakubcová</span> <span class="status-icon">❓</span></div>
 
-            <div class="person maybe"><span>Verča Kutálková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Janča Mančíková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Alice Nosková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Ivča Peclová</span> <span>❓</span></div>
+            <div class="person maybe"><span>Verča Kutálková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Janča Mančíková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Alice Nosková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Ivča Peclová</span> <span class="status-icon">❓</span></div>
 
-            <div class="person maybe"><span>Lukáš Pešta</span> <span>❓</span></div>
-            <div class="person maybe"><span>Adri Plotzerová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Markéta Sámková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Klára Sedláčková</span> <span>❓</span></div>
+            <div class="person maybe"><span>Lukáš Pešta</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Adri Plotzerová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Markéta Sámková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Klára Sedláčková</span> <span class="status-icon">❓</span></div>
 
-            <div class="person maybe"><span>Bára Sklenářová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Katka Svobodová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Martin Šebrle</span> <span>❓</span></div>
-            <div class="person maybe"><span>Míša Šmídová</span> <span>❓</span></div>
+            <div class="person maybe"><span>Bára Sklenářová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Katka Svobodová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Martin Šebrle</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Míša Šmídová</span> <span class="status-icon">❓</span></div>
 
-            <div class="person maybe"><span>Kačka Šplouchalová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Verča Štouračová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Dáša Šudíková</span> <span>❓</span></div>
-            <div class="person maybe"><span>Tomáš Trkan</span> <span>❓</span></div>
+            <div class="person maybe"><span>Kačka Šplouchalová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Verča Štouračová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Dáša Šudíková</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Tomáš Trkan</span> <span class="status-icon">❓</span></div>
 
-            <div class="person maybe"><span>Pavla Zeklová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Denča z Křoví</span> <span>❓</span></div>
-            <div class="person maybe"><span>Lucka Španielová</span> <span>❓</span></div>
-            <div class="person maybe"><span>Malá Pája</span> <span>❓</span></div>
+            <div class="person maybe"><span>Pavla Zeklová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Denča z Křoví</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Lucka Španielová</span> <span class="status-icon">❓</span></div>
+            <div class="person maybe"><span>Malá Pája</span> <span class="status-icon">❓</span></div>
         </div>
     </section>
 
