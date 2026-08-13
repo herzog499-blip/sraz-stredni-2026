@@ -207,8 +207,34 @@
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             border: 6px solid #fff;
+        }
+
+        /* --- Legenda --- */
+        .attendance-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #475569;
         }
 
         /* Grid jmen */
@@ -234,9 +260,12 @@
             color: #334155;
         }
 
+        /* Barvy pro stavy účasti */
         .person.yes { border-left-color: #2ecc71; background-color: #fafdfa; }
         .person.no { border-left-color: #e74c3c; background-color: #fffafa; }
         .person.maybe { border-left-color: #f39c12; }
+        .person.try { border-left-color: #3498db; background-color: #f4f9fd; } /* NOVÉ: Modrá pro složité/daleko */
+        
         .status-icon { font-size: 1.15rem; }
 
         /* --- Responzivita (Mobily a menší obrazovky) --- */
@@ -249,6 +278,14 @@
             .hero-img { height: 280px; }
             .carousel-track img { width: 250px; height: 180px; }
             .info-text h3:first-of-type { font-size: 2rem; }
+            
+            /* Legenda na mobilu pod sebou */
+            .attendance-legend {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 20px;
+            }
             
             /* Úprava girlandy pro mobil - rozdělení na 3 patra */
             .garland-container {
@@ -288,7 +325,7 @@
                 height: 45px;
                 font-size: 1.4rem;
                 margin-bottom: 0;
-                transform: none !important; /* Vypneme původní rotaci z velkého oblouku */
+                transform: none !important; 
             }
             
             /* Přirozené rozhození papírků (vlnění) na mobilu */
@@ -334,7 +371,7 @@
         </div>
     </header>
 
-    <!-- ZÁKLADNÍ INFO (S vloženou nezlomitelnou mezerou &nbsp;) -->
+    <!-- ZÁKLADNÍ INFO -->
     <section class="info-text">
         <h3>4.LA PO 15&nbsp;LETECH</h3>
         <h3>Kdy: 9. 10. 2026</h3>
@@ -426,7 +463,6 @@
             <img src="P1020022.jpg" alt="Vzpomínka 31">
             <img src="jaaivca.jpg" alt="Vzpomínka 32">
             <img src="tamara.jpg" alt="Vzpomínka 38">
-
         </div>
     </section>
 
@@ -435,6 +471,13 @@
         <h2>KDO SE ZÚČASTNÍ?</h2>
         
         <img class="hero-img" src="sraz.jpg" alt="Společná fotka ročníku">
+
+        <!-- LEGENDA STATUSŮ -->
+        <div class="attendance-legend">
+            <div class="legend-item"><span class="status-icon">✅</span> / <span class="status-icon">🔴</span> Ano / Ne</div>
+            <div class="legend-item"><span class="status-icon">❓</span> Ještě o slučáku neví</div>
+            <div class="legend-item"><span class="status-icon">💪</span> Bydlí daleko / Složité s dětmi, přesto se zkusí zúčastnit</div>
+        </div>
 
         <div class="name-grid">
             <div class="person yes"><span>Bára Bečková</span> <span class="status-icon">✅</span></div>
@@ -474,8 +517,8 @@
 
             <div class="person yes"><span>Dáša Šudíková</span> <span class="status-icon">✅</span></div>
             <div class="person maybe"><span>Tomáš Trkan</span> <span class="status-icon">❓</span></div>
-            <div class="person yes"><span>Alice Vůjtová</span> <span class="status-icon">✅</span></div>
-            <div class="person yes"><span>Pavla Zeklová</span> <span class="status-icon">✅</span></div>
+            <div class="person yes"><span>Alice Vůjtová</span> <span class="status-icon">💪</span></div>
+            <div class="person yes"><span>Pavla Zeklová</span> <span class="status-icon">💪</span></div>
         </div>
     </section>
 
