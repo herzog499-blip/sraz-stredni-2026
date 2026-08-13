@@ -230,11 +230,16 @@
 
         .legend-item {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            align-items: center; /* Drží ikonku a text na jednom řádku v rovině */
+            gap: 12px;
             font-weight: 500;
             font-size: 1rem;
             color: #475569;
+            text-align: left; /* Zabrání centrování dlouhých textů na mobilech */
+        }
+
+        .legend-item .status-icon {
+            flex-shrink: 0; /* Zabrání scvrknutí ikonky na malém displeji */
         }
 
         /* Grid jmen */
@@ -264,7 +269,7 @@
         .person.yes { border-left-color: #2ecc71; background-color: #fafdfa; }
         .person.no { border-left-color: #e74c3c; background-color: #fffafa; }
         .person.maybe { border-left-color: #f39c12; }
-        .person.try { border-left-color: #3498db; background-color: #f4f9fd; } /* NOVÉ: Modrá pro složité/daleko */
+        .person.try { border-left-color: #3498db; background-color: #f4f9fd; }
         
         .status-icon { font-size: 1.15rem; }
 
@@ -474,9 +479,9 @@
 
         <!-- LEGENDA STATUSŮ -->
         <div class="attendance-legend">
-            <div class="legend-item"><span class="status-icon">✅</span> / <span class="status-icon">🔴</span> Ano / Ne</div>
-            <div class="legend-item"><span class="status-icon">❓</span> Ještě o slučáku neví</div>
-            <div class="legend-item"><span class="status-icon">💪</span> Bydlí daleko / Složité s dětmi, přesto se zkusí zúčastnit</div>
+            <div class="legend-item"><span style="white-space: nowrap;"><span class="status-icon">✅</span> / <span class="status-icon">🔴</span></span> <span>Ano / Ne</span></div>
+            <div class="legend-item"><span class="status-icon">❓</span> <span>Ještě o slučáku neví</span></div>
+            <div class="legend-item"><span class="status-icon">💪</span> <span>Bydlí daleko / Složité s dětmi, přesto udělá vše pro účast</span></div>
         </div>
 
         <div class="name-grid">
